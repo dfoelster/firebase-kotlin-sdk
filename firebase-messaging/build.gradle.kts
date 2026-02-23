@@ -182,13 +182,15 @@ kotlin {
     }
 }
 
-mavenPublishing {
-    //publishToMavenCentral(automaticRelease = true)
-    //signAllPublications()
-
+publishing {
     repositories {
         addNexusRepo(project)
     }
+}
+
+mavenPublishing {
+    //publishToMavenCentral(automaticRelease = true)
+    //signAllPublications()
 
     coordinates(
         groupId = "com.jakala.gitlive",
