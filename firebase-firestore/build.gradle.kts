@@ -220,7 +220,7 @@ mavenPublishing {
     }
 
     coordinates(
-        groupId = "dev.gitlive",
+        groupId = "com.jakala.gitlive",
         artifactId = "firebase-firestore",
         version = project.property("firebase-firestore.version") as String
     )

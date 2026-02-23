@@ -190,7 +190,7 @@ mavenPublishing {
     }
 
     coordinates(
-        groupId = "dev.gitlive",
+        groupId = "com.jakala.gitlive",
         artifactId = "firebase-perf",
         version = project.property("firebase-perf.version") as String
     )

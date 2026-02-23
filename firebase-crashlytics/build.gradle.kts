@@ -172,7 +172,7 @@ mavenPublishing {
     }
 
     coordinates(
-        groupId = "dev.gitlive",
+        groupId = "com.jakala.gitlive",
         artifactId = "firebase-crashlytics",
         version = project.property("firebase-crashlytics.version") as String
     )
