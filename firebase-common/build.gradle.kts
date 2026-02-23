@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 import utils.TargetPlatform
+import utils.addNexusRepo
 import utils.toTargetPlatforms
 
 /*
@@ -172,9 +173,16 @@ kotlin {
         }
     }
 }
+
+publishing {
+    repositories {
+        addNexusRepo(project)
+    }
+}
+
 mavenPublishing {
-    publishToMavenCentral(automaticRelease = true)
-    signAllPublications()
+    //publishToMavenCentral(automaticRelease = true)
+    //signAllPublications()
 
     coordinates(
         groupId = "com.jakala.gitlive",
