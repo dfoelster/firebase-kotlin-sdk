@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 import utils.TargetPlatform
+import utils.addNexusRepo
 import utils.supportsApple
 import utils.toTargetPlatforms
 
@@ -180,8 +181,12 @@ kotlin {
 }
 
 mavenPublishing {
-    publishToMavenCentral(automaticRelease = true)
-    signAllPublications()
+    //publishToMavenCentral(automaticRelease = true)
+    //signAllPublications()
+
+    repositories {
+        addNexusRepo(project)
+    }
 
     coordinates(
         groupId = "dev.gitlive",

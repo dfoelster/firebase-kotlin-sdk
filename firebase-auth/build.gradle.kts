@@ -5,8 +5,10 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithSimulatorTests
 import org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeSimulatorTest
 import utils.TargetPlatform
+import utils.addNexusRepo
 import utils.supportsApple
 import utils.toTargetPlatforms
+import java.net.URI
 
 /*
  * Copyright (c) 2020 GitLive Ltd.  Use of this source code is governed by the Apache 2.0 license.
@@ -208,8 +210,12 @@ fun KotlinNativeTargetWithSimulatorTests.enableKeychainForTests() {
 }
 
 mavenPublishing {
-    publishToMavenCentral(automaticRelease = true)
-    signAllPublications()
+    // publishToMavenCentral(automaticRelease = true)
+    // signAllPublications()
+
+    repositories {
+        addNexusRepo(project)
+    }
 
     coordinates(
         groupId = "dev.gitlive",
